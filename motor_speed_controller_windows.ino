@@ -229,8 +229,8 @@ void move_motors(){
   analogWrite(right_PWM_pin, rightPWM);
 
   if(sl == 0. && sr == 0.) stop();
-  else if(leftPIDOutput > 0. && rightPIDOutput > 0.) forward();
-  else if(leftPIDOutput < 0. && rightPIDOutput < 0.) backward();
+  else if(leftPIDOutput >= 0. && rightPIDOutput >= 0.) forward();
+  else if(leftPIDOutput <= 0. && rightPIDOutput <= 0.) backward();
   else if(leftPIDOutput < 0. && rightPIDOutput > 0.) left();
   else if(leftPIDOutput > 0. && rightPIDOutput < 0.) right();
 
